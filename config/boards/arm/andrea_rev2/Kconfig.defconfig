@@ -6,7 +6,7 @@
 if BOARD_ANDREA_REV2
 
 config ZMK_KEYBOARD_NAME
-	default "Andrea"
+	default "Maki BT"
 
 if USB
 
