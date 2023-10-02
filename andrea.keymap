@@ -7,6 +7,7 @@
 
 #define FN  1
 #define FN2 2
+#define FN3 3
 
 / {
 	keymap {
@@ -18,30 +19,43 @@
     &kp TAB          &kp Q            &kp W         &kp E         &kp R         &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &kp LBKT         &kp RBKT         &kp BKSP                         &kp PG_UP
     &mt LCTRL CAPS   &kp A            &kp S         &kp D         &kp F         &kp G            &kp H            &kp J            &kp K            &kp L            &kp SCLN         &kp QUOT                          &kp ENTER                        &kp PG_DN
     &kp LSHFT        &kp Z            &kp X         &kp C         &kp V         &kp B            &kp B            &kp N            &kp M            &kp CMMA         &kp DOT          &kp FSLH         &kp RSHFT                         &kp UP
-    &kp LCTRL                         &kp LALT                    &kp SPACE     &mo FN           &kp SPACE        &kp LGUI                                                                                              &kp LEFT         &kp DOWN        &kp RIGHT
+    &kp LCTRL                         &kp LALT                    &kp SPACE     &mo FN2          &kp SPACE        &kp LGUI                                                                                              &kp LEFT         &kp DOWN        &kp RIGHT
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 			
 		};
 
-	        fn_layer {
+		fn_layer {
+			bindings = <
+    &kp ESC          &kp NUM_1        &kp NUM_2     &kp NUM_3     &kp NUM_4     &kp NUM_5        &kp NUM_6        &kp NUM_7        &kp NUM_8        &kp NUM_9        &kp NUM_0        &kp MINUS        &kp EQL          &kp BSLH         &kp GRAVE       &kp C_PP
+    &kp TAB          &kp Q            &kp W         &kp E         &kp R         &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &kp LBKT         &kp RBKT         &kp BKSP                         &kp PG_UP
+    &mt LCTRL CAPS   &kp A            &kp S         &kp D         &kp F         &kp G            &kp H            &kp J            &kp K            &kp L            &kp SCLN         &kp QUOT                          &kp ENTER                        &kp PG_DN
+    &kp LSHFT        &kp Z            &kp X         &kp C         &kp V         &kp B            &kp B            &kp N            &kp M            &kp CMMA         &kp DOT          &kp FSLH         &kp RSHFT                         &kp UP
+    &kp LCTRL                         &kp LALT                    &kp W         &mo FN2          &kp SPACE        &kp LGUI                                                                                              &kp LEFT         &kp DOWN        &kp RIGHT
+			>;
+			
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+			
+		};
+
+	        fn2_layer {
 			bindings = <
     &kp GRAVE        &kp F1           &kp F2           &kp F3          &kp F4          &kp F5        &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12          &kp INS          &kp DEL        &kp C_MUTE
     &trans           &trans           &kp UP           &trans          &trans          &trans        &trans           &kp SLCK         &kp PSCRN        &kp SLCK         &kp PAUSE_BREAK  &trans           &trans           &kp INS                         &kp C_PREV
     &trans           &kp LEFT         &kp DOWN         &kp RIGHT       &trans          &trans        &kp KP_MULTIPLY  &kp KP_DIVIDE    &kp HOME         &kp PG_UP        &trans           &trans                            &trans                          &kp C_NEXT
     &kp LSHFT        &trans           &trans           &trans          &trans          &trans        &trans           &kp KP_PLUS      &kp KP_MINUS     &kp END          &kp PG_DN        &trans           &trans                            &kp PG_UP
-    &mo FN2                           &trans                           &trans          &trans        &trans           &kp RALT                                                                                              &kp HOME         &kp PG_DN      &kp END        
+    &mo FN3                           &trans                           &trans          &trans        &trans           &kp RALT                                                                                              &kp HOME         &kp PG_DN      &kp END        
 			>;
 
 			sensor-bindings = <&inc_dec_kp BKSP DEL>;
 
 		};
 
-		fn2_layer {
+		fn3_layer {
 			bindings = <
     &kp GRAVE        &kp F1           &kp F2           &kp F3          &kp F4          &kp F5        &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12          &bootloader      &trans         &out OUT_TOG
-    &bt BT_CLR       &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 5  &trans           &trans           &trans           &trans           &trans           &trans           &trans           &reset                          &kp C_PREV
+    &bt BT_CLR       &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3    &bt BT_SEL 4    &tog FN       &trans           &trans           &trans           &trans           &trans           &trans           &trans           &reset                          &kp C_PREV
     &trans           &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_SAI &rgb_ug RGB_SAD &trans        &trans           &trans           &trans           &trans           &trans           &trans                            &trans                          &kp C_NEXT
     &kp LSHFT        &rgb_ug RGB_EFF  &trans           &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans        &trans           &trans           &trans           &trans           &trans           &trans           &trans                            &kp PG_UP
     &trans                            &kp LGUI                         &trans          &trans        &trans           &kp C_MENU                                                                                            &kp HOME         &kp PG_DN      &kp END        
